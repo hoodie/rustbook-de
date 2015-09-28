@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="de" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Einführung | Die Programmiersprache Rust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="Willkommen! Dieses Buch wird dir die [Programmiersprache Rust][rust] beibrigen.Rust ist eine Systemprogrammiersprache mit dem Fokus auf drei Ziele:Sicherheit, Geschwindigkeit und Nebenläufigkeit (Safety, Speed, Concurrency).Sie hält diese Ziele ohne Garbage Collector aufrecht,was sie zu einer nützlichen Sprache für eine Reihe von Anwendungsfällen machtin denen andere Sprachen nicht so gut sind: Einbettung in anderen Sprachen,Programme mit besonderen Anforderungen an Platz oder Zeit, low-level code schreiben,wie zum Beispiel Gerätetreiber und Betriebssysteme.Sie übertrifft derzeitige Sprachen, die auf diesen Bereich abzielen, indem sieeine Reihe von Checks zur Kompilierzeit durchführt – ohne Kosten zur Laufzeit –,währenddessen sie alle data races vermeidet.Rust ziehlt auch darauf ab &quot;kostenfreihe Abstraktionen&quot; zu realisieren obwohleinige dieser Abstraktionen sich anfühlen wie die einer Hochsprache.Selbst dann erlaubt Rust eine genaue Kontrolle wie es eine low-levelSprache würde.">
+        <meta name="generator" content="GitBook 2.4.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="0" data-basepath="." data-revision="Tue Sep 29 2015 01:40:39 GMT+0200 (CEST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Suchbegriff eingeben" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter active" data-level="0" data-path="index.html">
+            
+                
+                    <a href="./index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Einführung
+                    </a>
+            
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Veröffentlicht mit GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Inhaltsverzeichnis"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Suche"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Schrifteinstellungen"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">Hell</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Nacht</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Teilen"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Auf Twitter teilen
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Auf Google teilen
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Auf Facebook teilen
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Auf Weibo teilen
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Auf Instapaper teilen
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="./" >Die Programmiersprache Rust</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="die-programmiersprache-rust"><a name="die-programmiersprache-rust" class="plugin-anchor" href="#die-programmiersprache-rust"><span class="fa fa-link"></span></a>Die Programmiersprache Rust</h1>
+<p>Willkommen! Dieses Buch wird dir die <a href="https://www.rust-lang.org" target="_blank">Programmiersprache Rust</a> beibrigen.
+Rust ist eine Systemprogrammiersprache mit dem Fokus auf drei Ziele:
+Sicherheit, Geschwindigkeit und Nebenl&#xE4;ufigkeit (Safety, Speed, Concurrency).
+Sie h&#xE4;lt diese Ziele ohne Garbage Collector aufrecht,
+was sie zu einer n&#xFC;tzlichen Sprache f&#xFC;r eine Reihe von Anwendungsf&#xE4;llen macht
+in denen andere Sprachen nicht so gut sind: Einbettung in anderen Sprachen,
+Programme mit besonderen Anforderungen an Platz oder Zeit, low-level code schreiben,
+wie zum Beispiel Ger&#xE4;tetreiber und Betriebssysteme.
+Sie &#xFC;bertrifft derzeitige Sprachen, die auf diesen Bereich abzielen, indem sie
+eine Reihe von Checks zur Kompilierzeit durchf&#xFC;hrt &#x2013; ohne Kosten zur Laufzeit &#x2013;,
+w&#xE4;hrenddessen sie alle <em>data races</em> vermeidet.
+Rust ziehlt auch darauf ab &quot;kostenfreihe Abstraktionen&quot; zu realisieren obwohl
+einige dieser Abstraktionen sich anf&#xFC;hlen wie die einer Hochsprache.
+Selbst dann erlaubt Rust eine genaue Kontrolle wie es eine low-level
+Sprache w&#xFC;rde.</p>
+<p>&#x201C;Die Programmiersprache Rust&#x201D; ist in acht Abschnitte unterteilt.
+Diese Einf&#xFC;hrung ist der erste. Danach folgen:</p>
+<ul>
+<li><a href="book/Erste_Schritte.md">Erste Schritte</a> - Richte deinen Computer f&#xFC;r die Entwicklung mit Rust ein.</li>
+<li><a href="book/Lerne_Rust.md">Lerne Rust</a> - Lerne Rust Programmierung durch kleine Projekte.</li>
+<li><a href="book/Effektives_Rust.md">Effektives Rust</a> - Fortgeschrittene Konzepte um ausgezeichneten Rust code zu schreiben.</li>
+<li><a href="book/Syntax_und_Semantik.md">Syntax und Semantik</a> - Jedes St&#xFC;ck Rust auf kleine St&#xFC;cke heruntergebrochen.</li>
+<li><a href="book/Nightly_Rust.md">Nightly Rust</a> - <em>Cutting-edge features</em> die noch nicht in stabilen builds sind.</li>
+<li><a href="book/Glossar.md">Glossar</a> - Erkl&#xE4;rungen von Begriffen die in diesem Buch verwendet werden.</li>
+<li><a href="book/Bibliografie.md">Akademische Forschung</a> - Literatur die Rust beeinflusst hat.</li>
+</ul>
+<p>Nach dem Lesen dieser Einf&#xFC;hrung m&#xF6;chtest du wahrscheinlich, je nach Vorliebe,
+entweder &#x2018;<a href="book/Lerne_Rust.md">Lerne Rust</a>&#x2019; oder &#x2018;<a href="book/Syntax_und_Semantik.md">Syntax and Semantics</a>&#x2019; lesen:
+&#x2018;<a href="book/Lerne_Rust.md">Lerne Rust</a>&#x2019; wenn du mit einem Projekt anfangen m&#xF6;chtest,
+oder &#x2018;<a href="book/Syntax_und_Semantik.md">Syntax and Semantics</a>&#x2019; wenn du lieber klein anfangen und jeweils ein
+einziges Konzept ausf&#xFC;hrlich lernen m&#xF6;chtest bevor du mit dem n&#xE4;chsten weiter machst.
+Reichliche Querverweise verbinden diese beiden Teile miteinander.</p>
+<h3 id="mithelfen"><a name="mithelfen" class="plugin-anchor" href="#mithelfen"><span class="fa fa-link"></span></a>Mithelfen</h3>
+<p>Dieses Buch ist eine Community-&#xDC;bersetzung von dem offiziellen Buch &#x201C;The Rust Programming Language&#x201D;.</p>
+<p>Die Quelldateien dieser &#xDC;bersetzung befinden sich auf Github:
+<a href="https://github.com/panicbit/rustbook-de" target="_blank">github.com/panicbit/rustbook-de</a></p>
+<p>Die Quelldateien des englischen Originals befinden sich ebenfalls auf Github:
+<a href="https://github.com/rust-lang/rust/tree/master/src/doc/trpl" target="_blank">github.com/rust-lang/rust/tree/master/src/doc/trpl</a></p>
+<h2 id="eine-kurze-einf%C3%BChrung-in-rust"><a name="eine-kurze-einf%C3%BChrung-in-rust" class="plugin-anchor" href="#eine-kurze-einf%C3%BChrung-in-rust"><span class="fa fa-link"></span></a>Eine kurze Einf&#xFC;hrung in Rust</h2>
+<p>Ist Rust eine Sprache in der du interessiert sein k&#xF6;nntest? Lass uns ein paar 
+Code Beispiele anschauen um ein Paar ihrer St&#xE4;rken zu demonstrieren.</p>
+<p>Das Hauptkonzept, welches Rust einmalig macht, wird
+&#x2018;<em>ownership</em>&#x2019; [engl.: Besitztum] genannt. Betrachte dieses kleine Beispiel:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = <span class="hljs-built_in">vec!</span>[<span class="hljs-string">&quot;Hallo&quot;</span>, <span class="hljs-string">&quot;Welt&quot;</span>];
+}
+</code></pre>
+<p>Dieses Programm macht eine <a href="book/Variablenbindung.md">Variablenbindung</a> namens <code>x</code>. Der Wert dieser 
+Bindung ist ein <code>Vec&lt;T&gt;</code>, ein &#x2018;Vektor&#x2019;, den wir durch ein <a href="book/Makros.md">Makro</a> 
+aus der Standardbibliothek erzeugt haben. Dieses Makro hei&#xDF;t <code>vec</code> und wir rufen 
+Makros mit einem <code>!</code> auf. Dies folgt einem allgemeinem Prinzip von Rust:
+Mache Dinge klar. Makros k&#xF6;nnen bedeutend mehr komplizierte Dinge tun als 
+Funktionsaufrufe und damit sind sie optisch eindeutig. Das <code>!</code> hilft auch beim 
+Parsen, was es erleichtert Werkzeuge zu schreiben und ebenfalls wichtig ist.</p>
+<p>Wir haben <code>mut</code> benutzt um <code>x</code> <em>mutable</em> [engl.: ver&#xE4;nderbar] zu machen:
+Bindungen sind standardm&#xE4;&#xDF;ig <em>immutable</em> [engl.: unver&#xE4;nderbar].
+Wir werden den Vektor noch sp&#xE4;ter in diesem Beispiel ver&#xE4;ndern.</p>
+<p>Es ist ebenfalls beachtenswert, dass wir hier keine Typangaben brauchten: 
+Obwohl Rust statisch typisiert ist brauchten wir den Typ nicht ausdr&#xFC;cklich 
+angeben. Rust hat <em>type inference</em> [engl.: Typinferenz, Typableitung] um 
+die St&#xE4;rke statischer Typen und der Ausf&#xFC;hrlichkeit des Angeben von Typen 
+auszubalancieren.</p>
+<p>Rust bevorzugt Stack-Allokation vor Heap-Allokation: <code>x</code> wird direkt
+auf dem Stack platziert. Der <code>Vec&lt;T&gt;</code> Typ jedoch alloziert Speicher f&#xFC;r die
+Elemente des Vektors auf dem Heap. Falls du nicht mit dieser Unterscheidung
+vertraut bist, dann kannst du sie f&#xFC;rs erste ignorieren oder einen Blick in
+<a href="book/Der_Stack_Und_Der_Heap.md">&#x2018;Der Stack und der Heap&#x2019;</a> werfen. Als eine Systemprogrammiersprache
+gibt Rust dir die M&#xF6;glichkeit zu bestimmen wie dein Speicher alloziert wird,
+aber wenn du gerade erst beginnst ist das keine so gro&#xDF;e Sache.</p>
+<p>Zuvor haben wir erw&#xE4;hnt, dass &#x2018;ownership&#x2019; das entscheidende neue Konzept in Rust ist.
+Im Rust Jargon sagen wir, dass <code>x</code> den Vektor &#x2018;besitzt&#x2019;. Dies bedeutet, dass,
+wenn <code>x</code> den Scope [engl.: Geltungsbereich] verl&#xE4;sst, der Speicher des Vektors
+freigegeben wird. Dieser Vorgang wird deterministisch vom Rust Compiler
+vorgenommen, anstatt durch einen Mechanismus wie einen Garbage Collector.
+Das bedeutet, dass man in Rust selber keine Funktionen wie <code>malloc</code> und
+<code>free</code> aufruft: Der Compiler bestimmt statisch wann du Speicher allozieren oder
+freigeben musst und f&#xFC;gt diese Aufrufe selber ein. Irren ist Menschlich, aber
+Compiler vergessen nie.</p>
+<p>Lass uns eine weitere Zeile unserem Beispiel hinzuf&#xFC;gen:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = <span class="hljs-built_in">vec!</span>[<span class="hljs-string">&quot;Hallo&quot;</span>, <span class="hljs-string">&quot;Welt&quot;</span>];
+
+    <span class="hljs-keyword">let</span> y = &amp;x[<span class="hljs-number">0</span>];
+}
+</code></pre>
+<p>Wir haben eine weitere Variablenbindung <code>y</code> hinzugef&#xFC;gt. In diesem Fall ist
+<code>y</code> eine &#x2018;Referenz&#x2019; auf das erste Element des Vektors. Rusts Referenzen sind
+&#xE4;hnlich wie Zeiger in anderen Sprachen, aber mit zus&#xE4;tzlichen &#xDC;berpr&#xFC;fungen zur
+Kompilierzeit. Referenzen interagieren mit dem <em>ownership</em> System durch das
+<a href="book/Referenzen_Und_Ausleihen.md">&#x2018;Ausleihen&#x2019;</a> (borrowing) dessen worauf sie zeigen anstatt es zu
+besitzen. Der Unterschied ist, dass, wenn die Referenz den Scope verl&#xE4;sst,
+sie nicht den zugrunde liegenden Speicher freigibt. Falls sie das t&#xE4;te,
+dann w&#xFC;rden wir zweimal freigeben, was schlecht ist!</p>
+<p>Lass uns eine dritte Zeile hinzuf&#xFC;gen. Sie schaut harmlos aus, erzeugt aber
+einen Kompilierfehler.</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = <span class="hljs-built_in">vec!</span>[<span class="hljs-string">&quot;Hallo&quot;</span>, <span class="hljs-string">&quot;Welt&quot;</span>];
+
+    <span class="hljs-keyword">let</span> y = &amp;x[<span class="hljs-number">0</span>];
+
+    x.push(<span class="hljs-string">&quot;foo&quot;</span>);
+}
+</code></pre>
+<p><code>push</code> ist eine Methode auf Vektoren, welche ein weiteres Element an das Ende
+des Vektors anh&#xE4;ngt. Wenn wir versuchen dieses Programm zu kompilieren, erhalten
+wir einen Fehler:</p>
+<pre><code class="lang-text">error: cannot borrow `x` as mutable because it is also borrowed as immutable
+    x.push(&quot;foo&quot;);
+    ^
+note: previous borrow of `x` occurs here; the immutable borrow prevents
+subsequent moves or mutable borrows of `x` until the borrow ends
+    let y = &amp;x[0];
+             ^
+note: previous borrow ends here
+fn main() {
+
+}
+^
+</code></pre>
+<p>Uff! Der Rust compiler erzeugt manchmal recht detailierte Fehler und dies ist
+ein solches mal. Wie der Fehler erkl&#xE4;rt ist zwar unsere Variablenbindung ver&#xE4;nderbar,
+aber wir k&#xF6;nnen immernoch nicht <code>push</code> aufrufen. Das ist so weil wir bereits
+eine Referenz auf ein Element des Vektors, n&#xE4;mlich <code>y</code>, haben. Etwas zu ver&#xE4;ndern
+w&#xE4;rend eine weitere Referenz darauf existiert ist gef&#xE4;hrlich, weil wir die
+Referenz ung&#xFC;ltig machen k&#xF6;nnten. In diesem konkreten Fall k&#xF6;nnte es sein, dass
+wir beim erstellen des Vektors nur Platz f&#xFC;r zwei Elemente reserviert haben.
+Ein drittes hinzuzuf&#xFC;gen w&#xFC;rde dazu f&#xFC;hren einen neuen Speicherbereich f&#xFC;r all
+diese Elemente zu allozieren, hin&#xFC;ber zu kopieren und den internen Zeiger auf
+diesen Speicher zu setzen. Das alles funktioniert problemlos. Das Problem ist,
+das <code>y</code> nicht aktualisiert werden w&#xFC;rde und wir somit einen &#x2018;h&#xE4;ngenden Zeiger&#x2019;
+(dangling pointer) h&#xE4;tten. Das ist schlecht. Jegliche Benutzung von <code>y</code> w&#xE4;re ein
+Fehler in diesem Fall und somit hat der Compiler diesen f&#xFC;r uns abgefangen.</p>
+<p>Wie l&#xF6;sen wir also dieses Problem? Es gibt zwei m&#xF6;gliche L&#xF6;sungsans&#xE4;tze.
+Der erste ist eine Kopie zu machen anstatt eine Referenz zu benutzen:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = <span class="hljs-built_in">vec!</span>[<span class="hljs-string">&quot;Hallo&quot;</span>, <span class="hljs-string">&quot;Welt&quot;</span>];
+
+    <span class="hljs-keyword">let</span> y = x[<span class="hljs-number">0</span>].clone();
+
+    x.push(<span class="hljs-string">&quot;foo&quot;</span>);
+}
+</code></pre>
+<p>Rust hat standardm&#xE4;&#xDF;ig <a href="Besitz#move-semantics">Move Semantics</a>, daher rufen wir die <code>clone()</code>
+Methode auf, wenn wir eine Kopie von irgendwelchen Daten machen wollen.
+In diesem Beispiel ist <code>y</code> nicht l&#xE4;nger eine Referenz auf den Vektor, der in <code>x</code>
+gespeichert ist, sondern eine Kopie des ersten Elements, <code>&quot;Hallo&quot;</code>. Nun, da wir
+keine Referenz haben, funktioniert unser <code>push()</code> einwandfrei.</p>
+<p>Wenn wir wirklich eine Referenz haben wollen, dann brauchen wir die andere
+Option: Sicherstellen, dass unsere Referenzen den Scope verlassen bevor wir die
+Ver&#xE4;nderung am Vektor vornehmen. Das sieht so aus:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut</span> x = <span class="hljs-built_in">vec!</span>[<span class="hljs-string">&quot;Hallo&quot;</span>, <span class="hljs-string">&quot;Welt&quot;</span>];
+
+    {
+        <span class="hljs-keyword">let</span> y = &amp;x[<span class="hljs-number">0</span>];
+    }
+
+    x.push(<span class="hljs-string">&quot;foo&quot;</span>);
+}
+</code></pre>
+<p>Wir haben einen inneren Scope mittels einem weiteren Paar geschweifter Klammern
+erzeugt. <code>y</code> wird den Scope verlassen bevor wir <code>push()</code> aufrufen, und damit
+ist alles in Ordnung.</p>
+<p>Dieses Konzept des Besitzes ist nicht nur dazu gut h&#xE4;ngende Zeiger zu verhindern,
+sondern auch eine ganze Reihe verwandter Probleme zu l&#xF6;sen, wie zum Beispiel
+<em>iterator invalidation</em>, Nebenl&#xE4;ufigkeit und mehr.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>
+
+        
+<script src="gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

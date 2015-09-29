@@ -1,0 +1,333 @@
+<!DOCTYPE HTML>
+<html lang="de" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Rust installieren | Die Programmiersprache Rust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../book/Erste_Schritte.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.1" data-basepath=".." data-revision="Tue Sep 29 2015 19:24:10 GMT+0200 (CEST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Suchbegriff eingeben" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Einführung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="book/Erste_Schritte.html">
+            
+                
+                    <a href="../book/Erste_Schritte.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Erste Schritte
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1" data-path="book/Rust_Installieren.html">
+            
+                
+                    <a href="../book/Rust_Installieren.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Rust installieren
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Veröffentlicht mit GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Inhaltsverzeichnis"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Suche"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Schrifteinstellungen"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">Hell</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Nacht</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Teilen"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Auf Twitter teilen
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Auf Google teilen
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Auf Facebook teilen
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Auf Weibo teilen
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Auf Instapaper teilen
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Die Programmiersprache Rust</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="rust-installieren"><a name="rust-installieren" class="plugin-anchor" href="#rust-installieren"><span class="fa fa-link"></span></a>Rust installieren</h1>
+<p>Der erste Schritt um Rust zu nutzen ist es zu installieren. Es gibt eine Reihe
+von M&#xF6;glichkeiten Rust zu installieren, aber die einfachste ist das <code>rustup</code>
+Skript zu verwenden. Wenn du Linux oder einen Mac verwendest, dann ist alles
+was du tun musst dies:</p>
+<blockquote>
+<p>Hinweis: Du darfst nicht die <code>$</code>-Zeichen eintippen, sie dienen nur dazu den
+Anfang eines jeden Befehls anzuzeigen. Du wirst im Internet viele Tutorials
+finden, welche dieser Konvention folgen: <code>$</code> f&#xFC;r Befehle die als normaler
+Benutzer ausgef&#xFC;hrt werden und <code>#</code> f&#xFC;r Befehle, welche du als Administrator
+ausf&#xFC;hren solltest.</p>
+</blockquote>
+<pre><code class="lang-bash">$ curl -sf -L https://static.rust-lang.org/rustup.sh | sh
+</code></pre>
+<p>Falls du um die <a href="http://curlpipesh.tumblr.com" target="_blank">potenzielle Unsicherheit</a> bez&#xFC;glich <code>curl | sh</code>
+besorgt bist, dann lies bitte weiter und schau dir unseren Disclaimer weiter
+unten an. Und benutze ruhig die zwei-schritte Version der Installation und
+untersuche unser Installationsskript:</p>
+<pre><code class="lang-bash">$ curl <span class="hljs-operator">-f</span> -L https://static.rust-lang.org/rustup.sh -O
+$ sh rustup.sh
+</code></pre>
+<p>Wenn du Windows benutzt, dann lade bitte den passenden
+<a href="https://www.rust-lang.org/install.html" target="_blank">Installer</a> herunter.</p>
+<p><strong>ACHTUNG:</strong> Der Windows Installer f&#xFC;gt Rust standardm&#xE4;&#xDF;ig <strong>nicht</strong> der
+<code>%PATH%</code> Systemvariable hinzu. Falls dies die einzige Rust Version ist, die du
+installierst, und du sie von der Eingabeaufforderung aufrufen k&#xF6;nnen m&#xF6;chtest,
+dann klicke im Installationsdialog auf &quot;Advanced&quot; und stelle sicher, dass auf
+der &quot;Product Features&quot; Seite &quot;Add to PATH&quot; auf die Festplatte installiert wird.</p>
+<h2 id="deinstallieren"><a name="deinstallieren" class="plugin-anchor" href="#deinstallieren"><span class="fa fa-link"></span></a>Deinstallieren</h2>
+<p>Falls du dich dazu entscheidest Rust nicht mehr haben zu wollen, dann werden
+wir ein bisschen traurig sein, aber das ist in Ordnung. Nicht jede
+Programmiersprache ist f&#xFC;r jeden toll. F&#xFC;hre einfach das uninstall Skript aus:</p>
+<pre><code class="lang-bash">$ sudo /usr/<span class="hljs-built_in">local</span>/lib/rustlib/uninstall.sh
+</code></pre>
+<p>Falls du den Windows Installer verwendet hast, dann f&#xFC;hre einfach die <code>.msi</code>
+erneut aus und dir wird eine Option zum deinstallieren angezeigt werden.</p>
+<h2 id="der-versprochene-disclaimer"><a name="der-versprochene-disclaimer" class="plugin-anchor" href="#der-versprochene-disclaimer"><span class="fa fa-link"></span></a>Der versprochene Disclaimer</h2>
+<p>Manche leute werden, ein wenig zurecht, sehr ver&#xE4;rgert, wenn man ihnen sagt,
+dass sie <code>curl | sh</code> ausf&#xFC;hren sollen. Im Grunde vertraut man dabei den guten
+Leuten, die Rust pflegen, dass sie nicht deinen Computer hacken und b&#xF6;se Dinge
+tun. Das ist ein guter Instinkt! Falls du einer dieser Leute bist, dann schau
+dir bitte die Dokumentation auf <a href="https://github.com/rust-lang/rust#building-from-source" target="_blank">Rust aus den Quellen erstellen</a>
+oder auf <a href="https://www.rust-lang.org/install.html" target="_blank">der offiziellen Binary Downloadseite</a> an.</p>
+<h2 id="plattformunterst%C3%BCtzung"><a name="plattformunterst%C3%BCtzung" class="plugin-anchor" href="#plattformunterst%C3%BCtzung"><span class="fa fa-link"></span></a>Plattformunterst&#xFC;tzung</h2>
+<p>Oh, wir sollten auch die offiziell unterst&#xFC;tzten Plattformen erw&#xE4;hnen:</p>
+<ul>
+<li>Windows (7, 8, Server 2008 R2)</li>
+<li>Linux (2.6.18 oder neuer, verschiedene Distributionen), x86 und x86-64</li>
+<li>OSX 10.7 (Lion) oder neuer, x86 und x86-64</li>
+</ul>
+<p>Wir testen Rust ausf&#xFC;hrlich auf diesen Plattformen und ebenfalls auf ein paar
+anderen, wie z.B. Android. Aber diese sind jene, die am ehesten funktionieren,
+da sie besser getestet sind.</p>
+<p>Zuletzt ein Kommentar &#xFC;ber Windows. Rust sieht, seit seinem Release, Windows
+als eine first class Plattform an, aber wenn wir ehrlich sind, ist das Windows
+Erlebnis nicht so integriert wie das Linux/OS X Erlebnis ist. Wir arbeiten
+daran! Falls etwas nicht funktioniert ist es ein Bug. Lass es uns bitte wissen,
+wenn das passiert. Jeder einzelne Commit wird mit Windows getestet, genau wie
+bei jeder anderen Plattform.</p>
+<h2 id="nach-der-installation"><a name="nach-der-installation" class="plugin-anchor" href="#nach-der-installation"><span class="fa fa-link"></span></a>Nach der Installation</h2>
+<p>Wenn du Rust installiert hast, dann kannst du eine Shell/Eingabeaufforderung
+&#xF6;ffnen und dies eingeben:</p>
+<pre><code class="lang-bash">$ rustc --version
+</code></pre>
+<p>Du solltest eine Versionsnummer, einen Commit Hash und ein Commit Datum sehen.
+Wenn du gerade die Version 1.3.0 installiert hast, dann solltest du folgendes
+sehen:</p>
+<pre><code class="lang-bash">rustc <span class="hljs-number">1.3</span>.<span class="hljs-number">0</span> (<span class="hljs-number">9</span>a92aaf19 <span class="hljs-number">2015</span>-<span class="hljs-number">09</span>-<span class="hljs-number">15</span>)
+</code></pre>
+<p>Falls ja, dann hast du Rust erfolgreich installiert! Gratulation!</p>
+<p>Falls nicht, und du Windows nutzt, dann Pr&#xFC;fe, dass Rust in deiner <code>%PATH%</code>
+Systemvariable ist. Wenn nicht, dann starte den Installer nochmal und w&#xE4;hle
+&quot;Change&quot; auf der &quot;Change, repair, or remove installation&quot; Seite und stelle
+sicher, dass &quot;Add to PATH&quot; auf die Festplatte installiert wird.</p>
+<p>Dieser Installer installiert auch eine lokale Kopie der Dokumentation, sodass
+du sie offline lesen kannst. Auf UNIX Systemen findet man sie in
+<code>/usr/local/share/doc/rust</code>. Auf Windows ist sie in dem <code>share/doc</code> Ordner, wo
+auch immer du Rust hin installiert hast.</p>
+<p>Falls nicht gibt es eine Reihe von Orten wo Hilfe bekommen kannst.
+Der leichteste ist
+<a href="irc://irc.mozilla.org/#rust" target="_blank">der englischsprachige #rust IRC Channel auf irc.mozilla.org</a>,
+welchen du mittels <a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust" target="_blank">Mibbit</a> betreten kannst. Klick auf den Link und
+Chattest sofort mit anderen Rustlern. Falls du dich lieber auf deutsch
+unterhalten m&#xF6;chtest, dann kannst du auch <a href="http://chat.mibbit.com/?server=irc.mozilla.org&amp;channel=%23rust-de" target="_blank">#rust-de hier betreten</a>.
+Andere gro&#xDF;artige Ressourcen beinhalten das <a href="https://users.rust-lang.org/" target="_blank">Benutzerforum</a> und
+<a href="http://stackoverflow.com/questions/tagged/rust" target="_blank">Stack Overflow</a>.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../book/Erste_Schritte.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Erste Schritte"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

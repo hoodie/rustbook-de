@@ -1,0 +1,436 @@
+<!DOCTYPE HTML>
+<html lang="de" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Hallo Cargo | Die Programmiersprache Rust</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.4.2">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-anchors/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+    
+
+        
+    
+    
+    
+    <link rel="prev" href="../book/Hallo_Welt.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book" data-level="1.3" data-basepath=".." data-revision="Wed Sep 30 2015 16:53:05 GMT+0200 (CEST)">
+    
+
+<div class="book-summary">
+    <div class="book-search" role="search">
+        <input type="text" placeholder="Suchbegriff eingeben" class="form-control" />
+    </div>
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Einführung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="book/Erste_Schritte.html">
+            
+                
+                    <a href="../book/Erste_Schritte.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Erste Schritte
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="book/Rust_Installieren.html">
+            
+                
+                    <a href="../book/Rust_Installieren.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Rust installieren
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="book/Hallo_Welt.html">
+            
+                
+                    <a href="../book/Hallo_Welt.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Hallo Welt
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="book/Hallo_Cargo.html">
+            
+                
+                    <a href="../book/Hallo_Cargo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        Hallo Cargo
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Veröffentlicht mit GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Inhaltsverzeichnis"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Suche"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Schrifteinstellungen"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">Hell</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Nacht</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Teilen"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Auf Twitter teilen
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Auf Google teilen
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Auf Facebook teilen
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Auf Weibo teilen
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Auf Instapaper teilen
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+    
+
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Die Programmiersprache Rust</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="hallo-cargo"><a name="hallo-cargo" class="plugin-anchor" href="#hallo-cargo"><span class="fa fa-link"></span></a>Hallo Cargo!</h1>
+<p><a href="http://doc.crates.io" target="_blank">Cargo</a> ist ein Werkzeug, welches Rustler benutzen um ihre Rust
+Projekte zu verwalten. Cargo ist derzeit in einem pre-1.0 Zustand und ist somit
+immernoch in Arbeit. Jedoch ist es bereits gut genug es f&#xFC;r viele Rust Projekte
+einzusetzen und somit wird vorausgesetzt, dass Rust Projekte Cargo von Anfang
+an einsetzen.</p>
+<p>Cargo verwaltet drei Sachen: Das bauen des Codes, das herunterladen der
+Abh&#xE4;ngigkeiten, welche dein Projekt ben&#xF6;tigt und
+das bauen dieser Abh&#xE4;ngigkeiten. Zu Anfang hat dein Programm keine
+Abh&#xE4;ngigkeiten, also werden wir nur den ersten Teil an Funktionalit&#xE4;t nutzen.
+Schlussendlich werden wir mehr nutzen. Da wir Cargo von Anfang an nutzen
+wird es leicht sein sie hinterher hinzuzuf&#xFC;gen.</p>
+<p>Wenn du Rust mit dem offiziellen Installer installiert haben, dann wirst du
+auch Cargo haben. Wenn du allerdings Rust auf eine andere Art und Weise
+installiert hast, dann m&#xF6;chtest du m&#xF6;glicherweise einen Blick in die
+<a href="https://github.com/rust-lang/cargo#installing-cargo-from-nightlies" target="_blank">Cargo README</a> werfen um herauszufinden, wie man Cargo installiert.</p>
+<h2 id="nach-cargo-umwandeln"><a name="nach-cargo-umwandeln" class="plugin-anchor" href="#nach-cargo-umwandeln"><span class="fa fa-link"></span></a>Nach Cargo umwandeln</h2>
+<p>Lass uns unser &apos;Hallo Welt&apos; nach Cargo umwandeln.</p>
+<p>Um ein Projekt zu &quot;Cargoifizieren&quot; ben&#xF6;tigen wir drei Dinge:
+Erstelle eine <code>Cargo.toml</code> Konfigurationsdatei, lege die Quelltexte an den
+richtigen Platz und entferne die alte ausf&#xFC;hrbare Datei (<code>main.exe</code> unter
+Windows, <code>main</code> sonst wo). Lass uns den ersten Teil zuerst machen:</p>
+<pre><code class="lang-bash">$ mkdir src
+$ mv main.rs src/main.rs
+$ rm main  <span class="hljs-comment"># oder main.exe unter Windows</span>
+</code></pre>
+<p>Beachte, da wir eine ausf&#xFC;hrbare Datei erstellen, dass wir <code>main.rs</code> als
+Dateiname beibehalten. Wenn wir stattdessen eine Bibliothek machen wollten,
+sollten wir <code>lib.rs</code> verwenden. Diese Konvention wird von Cargo benutzt um
+unsere Projekte erfolgreich zu kompilieren, aber sie kann auch au&#xDF;er Kraft gesetzt werden, wenn wir das wollen.</p>
+<p>Cargo erwartet, dass deine Quelltexte in einem <code>src</code> Verzeichnis liegen.
+Das l&#xE4;sst das oberste Verzeichnis f&#xFC;r andere Sachen, wie READMEs,
+Lizenzinformationen und anderen Dingen, die nichts mit deinem
+Code zu tun haben, frei. 
+<!-- A place for everything, and everything in its place. --></p>
+<p>Als N&#xE4;chstes unsere Konfigurationsdatei:</p>
+<pre><code class="lang-bash">$ editor Cargo.toml
+</code></pre>
+<p>Stelle sicher, dass der Name correct ist: Das gro&#xDF;e <code>C</code> ist notwendig!</p>
+<p>Schreib das hier hinein:</p>
+<pre><code class="lang-toml"><span class="hljs-title">[package]</span>
+
+<span class="hljs-setting">name = <span class="hljs-value"><span class="hljs-string">&quot;hallo_welt&quot;</span></span></span>
+<span class="hljs-setting">version = <span class="hljs-value"><span class="hljs-string">&quot;0.0.1&quot;</span></span></span>
+<span class="hljs-setting">authors = <span class="hljs-value">[ <span class="hljs-string">&quot;Dein Name &lt;du@example.com&gt;&quot;</span> ]</span></span>
+</code></pre>
+<p>Diese Datei ist im <a href="https://github.com/toml-lang/toml" target="_blank">TOML</a> Format. TOML ist &#xE4;hnlich wie INI, aber hat ein
+paar tolle extra Funktionen. Der TOML Dokumentation zufolge</p>
+<blockquote>
+<p>Zielt TOML darauf ab ein minimales Konfigurationsformat zu sein, welches
+aufgrund seiner offensichtlichen Semantik, leicht zu lesen ist. TOML ist
+dazu designt eindeutig auf eine Hashtabelle abzubilden. Toml sollte in einer
+breiten Vielzahl von Sprachen leicht in Datenstrukturen zu parsen sein.</p>
+</blockquote>
+<p>Sobald wir diese Datei im Wurzelverzeichnis unseres Projektes haben, sind wir
+auch schon bereit es zu bauen! Um das zu tun, f&#xFC;hre dies aus:</p>
+<pre><code class="lang-bash">$ cargo build
+   Compiling hallo_welt v0.<span class="hljs-number">0.1</span> (file:///home/deinname/projekte/hallo_welt)
+$ ./target/debug/hallo_welt
+Hallo Welt!
+</code></pre>
+<p>Bumm! Wir haben unser Projekt mit <code>cargo build</code> gebaut und es mit
+<code>./target/debug/hallo_welt</code> ausgef&#xFC;hrt. Wir k&#xF6;nnen beides auch in
+einem einzigen Schritt machen mittels <code>cargo run</code>:</p>
+<pre><code class="lang-bash">$ cargo run
+     Running `target/debug/hallo_welt`
+Hallo Welt!
+</code></pre>
+<p>Beachte, dass dieses mal das Projekt nicht neu kompiliert wurde. Cargo hat
+selber herausgefunden, dass wir den Quelltext nicht ver&#xE4;ndert haben, also
+hat es einfach nur die Bin&#xE4;rdatei ausgef&#xFC;hrt. H&#xE4;tten wor eine Ver&#xE4;nderung
+vorgenommen, dann h&#xE4;tten wir beides gesehen:</p>
+<pre><code class="lang-bash">$ cargo run
+   Compiling hallo_welt v0.<span class="hljs-number">0.1</span> (file:///home/deinname/projekte/hallo_welt)
+     Running `target/debug/hallo_welt`
+Hallo Welt!
+</code></pre>
+<p>Dies hat uns nicht viel mehr eingebracht als einfach nur <code>rustc</code> zu benutzen,
+aber denk an Zukunft: Wenn unser Projekt komplexer wird, dann m&#xFC;ssen wir
+mehr machen um alle Teile zusammen ordentlich zum kompilieren zu bringen.
+Mit Cargo k&#xF6;nnen wir, w&#xE4;hrend unser Projekt w&#xE4;chst, einfach <code>cargo build</code>
+aufrufen und unser Projekt wird sofort auf die richtige Art und Weise gebaut.</p>
+<p>Wenn unser Projekt dann endlich fertig zum Release ist, kannst du einfach
+<code>cargo build --release</code> benutzen um dein Projekt mit Optimierungen zu
+kompilieren.</p>
+<p>Do wirst auch feststellen,
+dass Cargo eine neue Datei erzeugt hat: <code>Cargo.lock</code>.</p>
+<pre><code class="lang-toml"><span class="hljs-title">[root]</span>
+<span class="hljs-setting">name = <span class="hljs-value"><span class="hljs-string">&quot;hello_world&quot;</span></span></span>
+<span class="hljs-setting">version = <span class="hljs-value"><span class="hljs-string">&quot;0.0.1&quot;</span></span></span>
+</code></pre>
+<p>Die <code>Cargo.lock</code> Datei wird von Cargo benutzt um deine Abh&#xE4;ngigkeit zu
+verfolgen. Im Moment haben wir keine keine, also ist sie etwas d&#xFC;rftig.
+Du wirst diese Datei niemals selber anfassen m&#xFC;ssen, lass einfach Cargo
+die Sache regeln.</p>
+<p>Das wars! Wir haben <code>hallo_welt</code> erfolgreich mit Cargo gebaut. Obwohl das
+Programm simpel ist, benutzt es viele der Werkzeuge die du f&#xFC;r den Rest
+deiner Rust Karriere brauchst. <!-- klingt etwas merkwürdig -->
+Du kannst erwarten, dass du mit nahezu allen Rust Projekten so
+loslegen kannst:</p>
+<pre><code class="lang-bash">$ git <span class="hljs-built_in">clone</span> someurl.com/foo
+$ <span class="hljs-built_in">cd</span> foo
+$ cargo build
+</code></pre>
+<h2 id="ein-neues-projekt"><a name="ein-neues-projekt" class="plugin-anchor" href="#ein-neues-projekt"><span class="fa fa-link"></span></a>Ein neues Projekt</h2>
+<p>Du brauchst nicht jedes mal durch alle diese Schritte gehen, wenn du ein neues
+Projekt anf&#xE4;ngst! Cargo hat die F&#xE4;higkeit ein Ger&#xFC;st-Projekt zu erzeugen, mit
+dem du sofort anfangen kannst zu entwickeln.</p>
+<p>Um eine neues Projekt mit Cargo anzufangen, benutze <code>cargo new</code>:</p>
+<pre><code class="lang-bash">$ cargo new hallo_welt --bin
+</code></pre>
+<p>Wir &#xFC;bergeben <code>--bin</code>, da es unser Ziel ist eine ausf&#xFC;hrbare Anwendung,
+anstatt einer Bibliothek, zu erzeugen. Ausf&#xFC;hrbare Dateien werden oft 
+&#x2018;binaries&#x2019; genannt.
+(So wie in <code>/usr/bin</code>, falls du auf einem Unix System bist).</p>
+<p>Lass uns mal sehen wlche Dateien Cargo f&#xFC;r uns erzeugt hat:</p>
+<pre><code class="lang-bash">$ <span class="hljs-built_in">cd</span> hallo_welt
+$ tree .
+.
+&#x251C;&#x2500;&#x2500; Cargo.toml
+&#x2514;&#x2500;&#x2500; src
+    &#x2514;&#x2500;&#x2500; main.rs
+
+<span class="hljs-number">1</span> directory, <span class="hljs-number">2</span> files
+</code></pre>
+<p>Falls du den <code>tree</code> Befehl nicht hast, dann kannst du ihn dir wahrscheinlich
+mithilfe der Paketverwaltung deiner Distribution besogen. Der Befehl ist nicht
+notwendig, aber sicherlich n&#xFC;tzlich.</p>
+<p>Das ist alles was wir brauchen um loszulegen.
+Lass uns zuerst die <code>Cargo.toml</code> betrachten.</p>
+<pre><code class="lang-toml"><span class="hljs-title">[package]</span>
+
+<span class="hljs-setting">name = <span class="hljs-value"><span class="hljs-string">&quot;hallo_welt&quot;</span></span></span>
+<span class="hljs-setting">version = <span class="hljs-value"><span class="hljs-string">&quot;0.1.0&quot;</span></span></span>
+<span class="hljs-setting">authors = <span class="hljs-value">[<span class="hljs-string">&quot;Dein Name &lt;du@example.com&gt;&quot;</span>]</span></span>
+</code></pre>
+<p>Cargo hat diese Datei mit angemessenen Vorgaben, basierend auf den von dir
+&#xFC;bergebenen Argumenten und deiner globalen <code>git</code> Konfiguration, gef&#xFC;llt.
+Du wirst vielleicht bemerken, dass Cargo das <code>hallo_welt</code> Verzeichnis auch
+als <code>git</code> Repositorium initialisiert hat.</p>
+<p>Das hier steht in der <code>src/main.rs</code>:</p>
+<pre><code class="lang-rust"><span class="hljs-function"><span class="hljs-keyword">fn</span> <span class="hljs-title">main</span></span>() {
+    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);
+}
+</code></pre>
+<p>Cargo hat ein &quot;Hallo Welt!&quot; f&#xFC;r und erzeugt und du kannst sofort mit dem Coden
+loslegen!
+Cargo hat seinen eigenen <a href="http://doc.crates.io/guide.html" target="_blank">Guide</a>, welcher die Features von Cargo in
+gr&#xF6;&#xDF;erem Detail behandelt.</p>
+<p>Nun, da du mit den Werkzeugen vertraut bist, lass uns tats&#xE4;chlich mehr &#xFC;ber
+die Sprache Rust selbst lernen. Dies sind die Grundlagen, welche dir den Rest
+deiner Zeit mit Rust sehr dienlich sein werden.</p>
+<p>Du hast Zwei M&#xF6;glichkeiten:
+Entweder st&#xFC;rzt du dich in ein Projekt mit &#x2018;<a href="book/Lerne_Rust.md">Lerne Rust</a>&#x2019;,
+oder du arbeitest dir deinen Weg von unten nach oben mit
+&#x2018;<a href="book/Syntax_und_Semantik.md">Syntax und Semantik</a>&#x2019;.
+Erfahrenere Systemprogrammierer werden &#x2018;Lerne Rust&#x2019; vorziehen, w&#xE4;rend Leute
+mit Hintergrund in dynamischen Sprachen beides vevorzugen k&#xF6;nnten.
+Verschiedene Leute lernen verschieden! W&#xE4;hle was dir am besten liegt.</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../book/Hallo_Welt.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Hallo Welt"><i class="fa fa-angle-left"></i></a>
+        
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
